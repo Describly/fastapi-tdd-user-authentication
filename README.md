@@ -1,11 +1,4 @@
-# FastAPI Starter Kit
-This repository contains the code that can be used for local development using the docker. Below are the tools configured with this repo - 
-- [Adminer](https://www.adminer.org/) - Can be used to browse the database in browser
-- [FastAPI](https://fastapi.tiangolo.com/) - Basic setup required to start the FastApi project
-- [Mailpit](https://github.com/axllent/mailpit) - An email testing tool for local development
-- [MySQL](https://hub.docker.com/r/mysql/mysql-server/) - MySQL server for local development
-
-
+# Auto Generating Migrations (FastAPI + SQLAlchemy + Alembic)
 
 ### Installation & Configuration
 - Clone this repository in your local machine by typing `git clone git@github.com:Describly/fastapi-starter-kit.git`. 
@@ -26,10 +19,23 @@ You do not need to change anything here, but if you would like to change the use
 - One build is done, run `docker-compose up` to start the services. Leave this terminal open to check the logs.
 - To stop the services you can press `Ctrl + C` - (Control + C)
 
+### Commands
+- To Generate the Migration From Model
+```
+docker-compose run fastapi-service /bin/sh -c "alembic revision --autogenerate -m "create my table table""
+```
+- To Apply the Migration to Database
+```
+docker-compose run fastapi-service /bin/sh -c "alembic upgrade head"
+```
+- To Revert last applied migration
+```
+docker-compose run fastapi-service /bin/sh -c "alembic downgrade -1"
+```
 
 # Accessing the Applications
 - FastAPI Application Status [http://localhost:8000](http://localhost:8000)
 - API Documentation [http://localhost:8000/docs](http://localhost:8000/docs)
 - Database Access [http://localhost:8080](http://localhost:8080) - use the above detail to login.
-- Mailpit [http://localhost:8025/docs](http://localhost:8025)
+- Mailpit [http://localhost:8025](http://localhost:8025)
 # fastapi-sqlalchemy-alembic
