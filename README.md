@@ -24,7 +24,6 @@ You do not need to change anything here, but if you would like to change the use
 ### Building the Project
 - We can start building our projects by running `docker-compose build`
 - One build is done, run `docker-compose up` to start the services. Leave this terminal open to check the logs.
-- **Note** - Services might take upto 40 seconds to start.
 - To stop the services you can press `Ctrl + C` - (Control + C)
 
 
