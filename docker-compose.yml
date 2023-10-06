@@ -1,0 +1,58 @@
+version: "3.8"
+
+services:
+  adminer-service:
+    image: adminer:latest
+    restart: unless-stopped
+    container_name: adminer
+    depends_on:
+      - mysql-service
+    networks:
+      - describly
+    ports:
+      - "8080:8080"
+
+  fastapi-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: fastapi
+    container_name: fastapi
+    restart: unless-stopped
+    depends_on:
+      - mysql-service
+    ports:
+      - "8000:8000"
+    networks:
+      - describly
+    volumes:
+      - ".:/usr/srv"
+
+  smtp-service:
+    image: axllent/mailpit
+    restart: unless-stopped
+    container_name: smtp
+    networks:
+      - describly
+    ports:
+      - "8025:8025"
+      - "1025:1025"
+
+  mysql-service:
+    image: mysql/mysql-server:8.0.32
+    command: ["--default-authentication-plugin=mysql_native_password"]
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: $MYSQL_PASSWORD
+      MYSQL_ROOT_HOST: '%'
+      MYSQL_DATABASE: $MYSQL_DB
+    networks:
+      - describly
+    volumes:
+      - describly_mysql_data:/var/lib/mysql
+
+networks:
+  describly:
+volumes:
+  describly_mysql_data:
+    external: true

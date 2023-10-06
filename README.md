@@ -10,8 +10,8 @@ This repository contains the code that can be used for local development using t
 ### Installation & Configuration
 - Clone this repository in your local machine. 
 - Open the Terminal.
-- Run `docker volume create describly_mysql_data` to create a volue to persist the mysql data.
-- Below is your mysql connection details
+- Run `docker volume create describly_mysql_data` to create a docker volue in you machine. Required to persist the mysql data.
+- Below will be your mysql connection details
 ```bash
 MYSQL_HOST=mysql
 MYSQL_USER=root
@@ -20,9 +20,12 @@ MYSQL_DB=fastapi
 MYSQL_PORT=3306
 ```
 You do not need to change anything here, but if you would like to change the username, password or database name, you can modify it at this point in the `.env` file attached to this project. 
-- Now we can start building our project by running `docker-compose build`
-- One build is done, run `docker-compose up` to start the services. 
-- **Note** Service might take upto 40 seconds to start.
+
+### Building the Project
+- We can start building our projects by running `docker-compose build`
+- One build is done, run `docker-compose up` to start the services. Leave this terminal open to check the logs.
+- **Note** - Services might take upto 40 seconds to start.
+- To stop the services you can press `Ctrl + C` - (Control + C)
 
 
 # Accessing the Applications
