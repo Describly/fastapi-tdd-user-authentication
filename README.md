@@ -8,7 +8,7 @@ This repository contains the code that can be used for local development using t
 
 
 ### Installation & Configuration
-- Clone this repository in your local machine. 
+- Clone this repository in your local machine by typing `git clone git@github.com:Describly/fastapi-starter-kit.git`. 
 - Open the Terminal.
 - Run `docker volume create describly_mysql_data` to create a docker volue in you machine. Required to persist the mysql data.
 - Below will be your mysql connection details
