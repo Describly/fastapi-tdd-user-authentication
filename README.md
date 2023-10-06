@@ -32,3 +32,4 @@ You do not need to change anything here, but if you would like to change the use
 - API Documentation [http://localhost:8000/docs](http://localhost:8000/docs)
 - Database Access [http://localhost:8080](http://localhost:8080) - use the above detail to login.
 - Mailpit [http://localhost:8025/docs](http://localhost:8025)
+# fastapi-sqlalchemy-alembic
