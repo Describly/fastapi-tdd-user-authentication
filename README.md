@@ -1,7 +1,10 @@
 # Auto Generating Migrations (FastAPI + SQLAlchemy + Alembic)
 
+### Video Tutorial
+[Click here](https://youtu.be/HuOG7VS8qvE)
+
 ### Installation & Configuration
-- Clone this repository in your local machine by typing `git clone git@github.com:Describly/fastapi-starter-kit.git`. 
+- Clone this repository in your local machine by typing `git@github.com:Describly/fastapi-sqlalchemy-alembic.git`. 
 - Open the Terminal and navigate to the project folder.
 - Run `docker volume create describly_mysql_data` to create a docker volue in you machine. Required to persist the mysql data.
 - Below will be your mysql connection details
