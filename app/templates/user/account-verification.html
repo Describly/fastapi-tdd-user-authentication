@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<head>
+    <title>Account Activation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+        .email-container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .logo {
+            max-width: 150px;
+            margin-bottom: 16px;
+        }
+        .button {
+            color: #fff;
+            background-color: #007BFF;
+            border-color: #007BFF;
+            border-radius: .25rem;
+            text-decoration: none;
+            padding: .375rem .75rem;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <h1>Welcome to {{ app_name }}!</h1>
+        <p>Dear {{ name }},</p>
+        <p>Thank you for signing up. Please activate your account by clicking the link below:</p>
+        <p>
+            <a href="{{ activate_url }}" class="button">Activate Account</a>
+        </p>
+        <p>If the button above doesn't work, please copy and paste the following URL into your browser:</p>
+        <p><a href="{{ activate_url }}">{{ activate_url }}</a></p>
+        <p>Thank you for choosing us!</p>
+        <p>Best Regards,<br>{{ app_name }}</p>
+    </div>
+</body>
+</html>

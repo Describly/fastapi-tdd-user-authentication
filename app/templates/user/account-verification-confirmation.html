@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<head>
+    <title>Account Activated</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+        .email-container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .logo {
+            max-width: 150px;
+            margin-bottom: 16px;
+        }
+        .button {
+            color: #fff;
+            background-color: #007BFF;
+            border-color: #007BFF;
+            border-radius: .25rem;
+            text-decoration: none;
+            padding: .375rem .75rem;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <img src="#" alt="logo" class="logo">
+        <h1>Welcome to {{ app_name }}!</h1>
+        <p>Dear {{ name }},</p>
+        <p>Thank you for verifying your account. We are really excited to have you in {{ app_name }} family.</p>
+        <p>Your account have been activated now. You can sign-in now using below button.</p>
+        <p>
+            <a href="{{ login_url }}" target="_blank" class="button">Sign In</a>
+        </p>
+        <p>Thank you for choosing us!</p>
+        <p>Best Regards,<br>{{ app_name }}</p>
+    </div>
+</body>
+</html>
